@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\data\maven-repos\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar" />
+	<context id="context1">
+		<!-- pagination plugin -->
+		<!-- <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin> -->
+		<!-- <plugin type="com.lasho.mybatis.PaginationMysqlPlugin" /> -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+			password="" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- pagination -->
+		<!-- 
+		<javaModelGenerator targetPackage="com.lasho.mybatis.domain"
+			targetProject="myBatisDemo" />
+		<sqlMapGenerator targetPackage="com.lasho.mybatis.xmlmapper"
+			targetProject="myBatisDemo" />
+		<javaClientGenerator targetPackage="com.lasho.mybatis.mapper"
+			targetProject="myBatisDemo" type="XMLMAPPER" /> 
+		<table schema="" tableName="code" domainObjectName="Code"/>
+			-->
+		
+		<!-- un-pagination -->	
+		<javaModelGenerator targetPackage="com.lasho.mybatis.unpage"
+			targetProject="myBatisDemo" />
+		<sqlMapGenerator targetPackage="com.lasho.mybatis.unpage"
+			targetProject="myBatisDemo" />
+		<javaClientGenerator targetPackage="com.lasho.mybatis.unpage"
+			targetProject="myBatisDemo" type="XMLMAPPER" />
+		<table schema="" tableName="code" domainObjectName="Code"/>
+	</context>
+</generatorConfiguration>
